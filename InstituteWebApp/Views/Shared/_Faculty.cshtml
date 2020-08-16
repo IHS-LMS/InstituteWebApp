@@ -1,0 +1,30 @@
+<html>
+
+
+
+</html>
+<body>
+    <nav>
+        <ul>
+            <li><a onClick="location.href='/Home/Dashboard'" style="border: none;">health institute</a></li>
+            <div>
+                <li>
+                    <a onClick="location.href='/Faculty'" style="background: white; border-radius: 20px;  color: #1464BE;">
+                        Add
+                        Faculty
+                    </a>
+                </li>
+                <li><a onClick="location.href='/Faculty/StudentNightshift'">Student Night Shift Timetable</a></li>
+                <li><a onClick="location.href='/Faculty/TeacherCoordinator'">Add Faculty Coordinator</a></li>
+                <li><a onClick="location.href='/Faculty/Timetable'" ">Class Timetable</a></li>
+                <li><a onClick="location.href='/Faculty/ExamTimetable'">Exams Timetable</a></li>
+                <li><a onClick="location.href='/Faculty/Course'">Add Course</a></li>
+            </div>
+            <li>
+                <!-- <i class="fas fa -user" style="font-size: 30px;"></i> -->
+                <img src="#" alt="">
+            </li>
+        </ul>
+    </nav>
+    @RenderBody()
+</body>

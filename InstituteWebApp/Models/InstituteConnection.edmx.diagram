@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01ccb5d7a8784da18c5f0034e1e9c127" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="KIHSModel.Attendance" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Clearance" Width="1.5" PointX="8.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Coordinator" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Course" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Department" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.DeptCourse" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.EducationalBackground" Width="1.5" PointX="7.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.EducationalRank" Width="1.5" PointX="7.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Enrollment" Width="1.5" PointX="3" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.ExamTimeTable" Width="1.5" PointX="5.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Group" Width="1.5" PointX="10.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Hostel" Width="1.5" PointX="3.75" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.HostelAttendance" Width="1.5" PointX="11.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.HostelRegistration" Width="1.5" PointX="6" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.ManageTimeTable" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.NightShift" Width="1.5" PointX="12.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Room" Width="1.5" PointX="6" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.ShowTimeTable" Width="1.5" PointX="9.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.TimeTable" Width="1.5" PointX="10.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Tool" Width="1.5" PointX="3.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Address" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Employee" Width="1.5" PointX="3" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Health" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Job" Width="1.5" PointX="3" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.SchoolBackground" Width="1.5" PointX="3" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Staff" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Student" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Teacher" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.Score" Width="1.5" PointX="8" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KIHSModel.ScoreDetail" Width="1.5" PointX="10.25" PointY="17.125" IsExpanded="true" />
+        <AssociationConnector Association="KIHSModel.FK__Attendanc__Stude__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_Attendance_DeptCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Clearance__Regis__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Coordinat__Depar__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Coordinat__Teach__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__DeptCours__Cours__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__ExamTimeT__Cours__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__DeptCours__Depar__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Enrollmen__Depar__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Group__DeptCours__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__ManageTim__DeptC__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_TimeTable_DeptCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Education__Staff__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Education__Staff__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Enrollment__ID__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__ExamTimeT__Teach__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Score__TimeTable__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Group__StudentID__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__NightShift__ID__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__HostelReg__Hoste__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Room__HostelID__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_HostelAttendance_Hostel" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_HostelAttendance_HostelRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__HostelReg__Stude__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__ManageTim__Teach__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__ShowTimeTabl__ID__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__NightShif__Teach__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Room__ToolsID__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__TimeTable__Teach__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Address__ID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_Staff_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_Employee_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Health__ID__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Job__StudentID__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__SchoolBac__Stude__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK_Teacher_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__Score__StudentID__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.FK__ScoreDeta__Score__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="KIHSModel.HostelEmployee" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

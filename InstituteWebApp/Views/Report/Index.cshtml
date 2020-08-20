@@ -1,4 +1,4 @@
-﻿@model InstituteWebApp.Models.ReportViewModel
+﻿@model IEnumerable<InstituteWebApp.Models.Student>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,25 +73,25 @@
                         </tr>
                     </thead>
                     <tbody>
-        @if (Model != null)
-        {
-            <tr>
-                <td>@Model.ID</td>
-                <td>@Model.FullName</td>
-                <td>@Model.FatherName</td>
-                <td>@Model.GrandFatherName</td>
-                <td>@Model.Gender</td>
-                <td>@Model.POB</td>
-                <td>@Model.DOB</td>
-                <td></td>
-                <td>@Model.CellPhone</td>
-                <td>@Model.ParentCellphone</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button type="submit">Update</button></td>
-            </tr>}
+                        @foreach (var item in Model) { 
+                        <tr>
+                            <td>@Html.DisplayFor(modelitem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelitem => item.FullName)</td>
+                            <td>@Html.DisplayFor(modelitem => item.FatherName)</td>
+                            <td>@Html.DisplayFor(modelitem => item.GrandFatherName)</td>
+                            <td>@Html.DisplayFor(modelitem => item.Gender)</td>
+                            <td>@Html.DisplayFor(modelitem => item.POB)</td>
+                            <td>@Html.DisplayFor(modelitem => item.DOB)</td>
+                            <td>@Html.DisplayFor(modelitem => item.CellPhone)</td>
+                            <td>@Html.DisplayFor(modelitem => item.ParentCellphone)</td>
+                            <td>@Html.DisplayFor(modelitem => item.ID)</td>
+                            @*<td>@Html.DisplayFor(modelitem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelitem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelitem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelitem => item.ID)</td>*@
+                            <td><button type="submit">Update</button></td>
+                        </tr>
+                        }
                     </tbody>
                 </table>
             </div>

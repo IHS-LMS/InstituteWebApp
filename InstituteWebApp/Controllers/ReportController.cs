@@ -9,16 +9,17 @@ namespace InstituteWebApp.Controllers
 {
     public class ReportController : Controller
     {
+        KIHSEntities db = new KIHSEntities();
+
         // GET: Report
         public ActionResult Index()
         {
-            KIHSEntities db = new KIHSEntities();
-            Student student = db.Students.SingleOrDefault(x => x.ID == 2);
+            //Student student = db.Students.SingleOrDefault(x => x.ID == 2);
 
-            ReportViewModel svm = new ReportViewModel();
-            svm.FullName = student.FullName;
+            //ReportViewModel svm = new ReportViewModel();
+            //svm.FullName = student.FullName;
 
-            return View(svm);
+            return View(db.Students.ToList());
         }
     }
 }

@@ -11,10 +11,11 @@ namespace InstituteWebApp.Controllers
     {
         KIHSEntities db = new KIHSEntities();
 
-        // GET: Report
+        [HttpGet]
         public ActionResult Index()
         {
-            return View(db.Students.ToList());
+            List<Student> st = db.Students.ToList();
+            return this.Json(st, JsonRequestBehavior.AllowGet);
         }
     }
 }

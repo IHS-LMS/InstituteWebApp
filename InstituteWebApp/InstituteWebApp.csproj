@@ -231,7 +231,6 @@
     <Compile Include="Models\NightShift.cs">
       <DependentUpon>InstituteConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ReportViewModel.cs" />
     <Compile Include="Models\Room.cs">
       <DependentUpon>InstituteConnection.tt</DependentUpon>
     </Compile>
@@ -253,7 +252,6 @@
     <Compile Include="Models\Student.cs">
       <DependentUpon>InstituteConnection.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="Models\Teacher.cs">
       <DependentUpon>InstituteConnection.tt</DependentUpon>
     </Compile>

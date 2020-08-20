@@ -14,11 +14,6 @@ namespace InstituteWebApp.Controllers
         // GET: Report
         public ActionResult Index()
         {
-            //Student student = db.Students.SingleOrDefault(x => x.ID == 2);
-
-            //ReportViewModel svm = new ReportViewModel();
-            //svm.FullName = student.FullName;
-
             return View(db.Students.ToList());
         }
     }

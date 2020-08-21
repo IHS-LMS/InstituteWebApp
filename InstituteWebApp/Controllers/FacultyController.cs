@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstituteWebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,10 @@ namespace InstituteWebApp.Controllers
         public ActionResult Course()
         {
             return View();
+        }
+        public JsonResult GetCourseData(Course course)
+        {
+            return Json(course, JsonRequestBehavior.AllowGet);
         }
         public ActionResult CourseTimetable()
         {

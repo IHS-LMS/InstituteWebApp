@@ -59,11 +59,11 @@
                             <th style="width: 180px;">Father Name</th>
                             <th style="width: 180px;">Grand Father</th>
                             <th style="width: 180px;">Gender</th>
-                            <th style="width: 180px;"> POB</th>
-                            <th style="width: 180px;">DOB</th>
-                            <th style="width: 180px;">DOB</th>
-                            <th style="width: 180px;">DOB</th>
-                            <th style="width: 180px;">DOB</th>
+                            <th style="width: 180px;"> DOB</th>
+                            <th style="width: 180px;">POB</th>
+                            <th style="width: 180px;">Native Language</th>
+                            <th style="width: 180px;">Nationality</th>
+                            <th style="width: 180px;">NID</th>
                             <th style="width: 180px;">Age</th>
                             <th style="width: 180px;"> Phone</th>
                             <th style="width: 180px;">Parent phone</th>
@@ -72,29 +72,55 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button type="submit">Update</button></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            
+                $.ajax({
+                    type: "GET",
+                    contentType: 'application/json',
+                    url: "/Report/SendIndexData",
+                    success: function (data) {
+                        console.log(data);
+                        let tableBody = $('tbody');
+                        tableBody.html('');
+                        data.forEach(function(element) {
+                            tableBody.append(
+                                `
+                                    <tr>
+                                        <td>${element.ID}</td>
+                                        <td>${element.FullName}</td>
+                                        <td>${element.FatherName}</td>
+                                        <td>${element.GrandFatherName}</td>
+                                        <td>${element.Gender}</td>
+                                        <td>${element.DOB}</td>
+                                        <td>${element.POB}</td>
+                                        <td>${element.NativeLanguage}</td>
+                                        <td>${element.Nationality}</td>
+                                        <td>${element.NID}</td>
+                                        <td>${element.CellPhone}</td>
+                                        <td>${element.NID}</td>
+                                        <td>${element.ParentCellphone}</td>
+                                        <td>${element.Email}</td>
+                                        <td><button type="submit">Update</button></td>
+                                    </tr>
+                                `
+                            );
+                        });
+                    },
+                    error: function (result) {
+                        alert("Problem occured" + result);
+                    }
+                });
+            })
+   
 
+    </script>
 </body>
 
 </html>

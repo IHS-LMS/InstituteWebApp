@@ -1,6 +1,7 @@
 ﻿using InstituteWebApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,11 +19,19 @@ namespace InstituteWebApp.Controllers
         {
             return View();
         }
-        public JsonResult GetCourseData(Course course)
+        public ActionResult GetCourseData(Course course)
         {
-            return Json(course, JsonRequestBehavior.AllowGet);
+            //KIHSEntities db = new KIHSEntities();
+            //Course c = new 
+            //return Json(course, JsonRequestBehavior.AllowGet);
+            using (KIHSEntities db = new KIHSEntities())
+            {
+                db.Database.ExecuteSqlCommand($"INSERT INTO Department.Course (CourseName) VALUES ('"+course.CourseName+"')");
+            }
+
+            return null;
         }
-        public ActionResult CourseTimetable()
+            public ActionResult CourseTimetable()
         {
             return View();
         }

@@ -141,6 +141,7 @@
     <Content Include="Scripts\FileValidations\fv-student-job.js" />
     <Content Include="Scripts\FileValidations\fv-student-score.js" />
     <Content Include="Scripts\FileValidations\fv-student.js" />
+    <Content Include="Scripts\JSON\CourseJson.js" />
     <Content Include="Scripts\SlideShow.js" />
     <Content Include="Scripts\FileValidations\validation-functions.js" />
     <Content Include="Web.config" />

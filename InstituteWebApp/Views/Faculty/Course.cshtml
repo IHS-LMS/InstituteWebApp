@@ -68,7 +68,7 @@
             $.ajax({
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
-                data: "{course:" + JSON.stringify(course) + "}",
+                data: JSON.stringify(course),
                 url: "/Faculty/GetCourseData",
                 success: function (data) {
                     alert("Data: " + data);

@@ -19,16 +19,20 @@ namespace InstituteWebApp.Controllers
         {
             return View();
         }
-        public ActionResult GetCourseData(Course course)
+
+        [HttpPost]
+        public ActionResult Course(Course course)
         {
             using (KIHSEntities db = new KIHSEntities())
             {
-                db.Database.ExecuteSqlCommand($"INSERT INTO Department.Course (CourseName) VALUES ('"+course.CourseName+"')");
+                db.Courses.Add(course);
+                db.SaveChanges();
+                int id = course.ID;
             }
-
-            return null;
+            return View(course);
         }
-            public ActionResult CourseTimetable()
+
+        public ActionResult CourseTimetable()
         {
             return View();
         }

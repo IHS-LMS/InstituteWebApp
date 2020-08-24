@@ -16,7 +16,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
                     type: "POST",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(course),
-                    url: "/Faculty/GetCourseData",
+                    url: "/Faculty/Course",
                     success: function (data) {
                         alert("Data: " + data);
                     },

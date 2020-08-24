@@ -130,18 +130,18 @@
       <DependentUpon>InstituteConnection.edmx</DependentUpon>
       <LastGenOutput>InstituteConnection.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\fv-faculty.js" />
-    <Content Include="Scripts\fv-hostel-attendance.js" />
-    <Content Include="Scripts\fv-hostel-employee.js" />
-    <Content Include="Scripts\fv-hostel-registration.js" />
-    <Content Include="Scripts\fv-hostel-room.js" />
-    <Content Include="Scripts\fv-hostel.js" />
-    <Content Include="Scripts\fv-student-attendance.js" />
-    <Content Include="Scripts\fv-student-job.js" />
-    <Content Include="Scripts\fv-student-score.js" />
-    <Content Include="Scripts\fv-student.js" />
+    <Content Include="Scripts\FileValidations\fv-faculty.js" />
+    <Content Include="Scripts\FileValidations\fv-hostel-attendance.js" />
+    <Content Include="Scripts\FileValidations\fv-hostel-employee.js" />
+    <Content Include="Scripts\FileValidations\fv-hostel-registration.js" />
+    <Content Include="Scripts\FileValidations\fv-hostel-room.js" />
+    <Content Include="Scripts\FileValidations\fv-hostel.js" />
+    <Content Include="Scripts\FileValidations\fv-student-attendance.js" />
+    <Content Include="Scripts\FileValidations\fv-student-job.js" />
+    <Content Include="Scripts\FileValidations\fv-student-score.js" />
+    <Content Include="Scripts\FileValidations\fv-student.js" />
     <Content Include="Scripts\SlideShow.js" />
-    <Content Include="Scripts\validation-functions.js" />
+    <Content Include="Scripts\FileValidations\validation-functions.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

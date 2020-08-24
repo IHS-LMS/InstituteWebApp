@@ -21,9 +21,6 @@ namespace InstituteWebApp.Controllers
         }
         public ActionResult GetCourseData(Course course)
         {
-            //KIHSEntities db = new KIHSEntities();
-            //Course c = new 
-            //return Json(course, JsonRequestBehavior.AllowGet);
             using (KIHSEntities db = new KIHSEntities())
             {
                 db.Database.ExecuteSqlCommand($"INSERT INTO Department.Course (CourseName) VALUES ('"+course.CourseName+"')");

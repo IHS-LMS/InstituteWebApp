@@ -18,11 +18,11 @@
 
                 <div>
                     <label for="student_ID">Student_ID</label>
-                    <input type="number" name="student_ID" id="" pattern="[0-9]+" required>
+                    <input type="number" name="student_ID" id="" class="StudentID" pattern="[0-9]+" required>
                     <label for="marks">Marks</label>
-                    <input type="number" name="marks" min="0" max="100" id="" required>
+                    <input type="number" name="marks" min="0" max="100" id="" class="Marks" required>
                     <label for="type">Type</label>
-                    <select name="type" id="">
+                    <select name="type" id="" class="Type">
                         <option value="">Select</option>
                         <option value="10">10%</option>
                         <option value="20">20%</option>
@@ -35,32 +35,32 @@
                         <option value="100">100%</option>
                     </select>
                     <label for="chance">Chance</label>
-                    <select name="chance" id="" required>
+                    <select name="chance" id="" class="Chance" required>
                         <option value="">Select</option>
                         <option value="first">First Chance</option>
                         <option value="second">Second Chance</option>
                         <option value="third">Third Chance</option>
                     </select>
                     <label for="course_name">Course_Name</label>
-                    <select name="course_name" id="" required>
+                    <select name="course_name" id="" class="CourseName" required>
                         <option value="">Select</option>
                         <option value="math">Math</option>
                     </select>
                     <label for="year">Educational_Year</label>
-                    <select name="year" id="" required>
+                    <select name="year" id="" class="EducationalYear" required>
                         <option value="">Select</option>
                         <option value="first">First Year</option>
                         <option value="second">Second Year</option>
                         <option value="third">Third Year</option>
                     </select>
                     <label for="semester">Semester</label>
-                    <select name="semester" id="" required>
+                    <select name="semester" id="" class="Semester" required>
                         <option value="">Select</option>
                         <option value="first">First Semester</option>
                         <option value="second">Second Semester</option>
                     </select>
                     <label for="exam_date">Exam_Date</label>
-                    <input type="date" name="exam_date" id="" required>
+                    <input type="date" name="exam_date" id="" class="ExamDate" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -77,3 +77,41 @@
 </body>
 
 </html>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var score = {
+                StudentID: $(".StudentID").val(),
+                Marks: $(".Marks").val(),
+                Type: $(".Type").val(),
+                Chance: $(".Chance").val(),
+                CourseName: $(".CourseName").val(),
+                EducationalYear: $(".EducationalYear").val(),
+                Semester: $(".Semester").val(),
+                ExamDate: $(".ExamDate").val()
+
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{score:" + JSON.stringify(score) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

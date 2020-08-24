@@ -25,16 +25,16 @@
 
                     </select>
                     <label for="Teacher_Name">Teacher_Name</label>
-                    <select name="Teacher_Name" id="" required>
+                    <select name="Teacher_Name" id="" class="TeacherName" required>
                         <option value="Select">Select</option>
 
                     </select>
                     <label for="Present_Day">Present_Day</label>
-                    <input type="text" name="Present_Day" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="Present_Day" class="PresentDay" id="" pattern="[A-Za-z- ]+" required>
                     <label for="Start_Time">Start_Time</label>
-                    <input type="time" name="Start_Time" id="" required>
+                    <input type="time" name="Start_Time" id="" class="StartTime" required>
                     <label for="End_Time">End_Time</label>
-                    <input type="time" name="End_Time" id="" required>
+                    <input type="time" name="End_Time" id="" class="EndTime" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -50,3 +50,35 @@
 </body>
 
 </html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var teachername = $(".TeacherName").val();
+            var presentday = $(".PresentDay").val();
+            var starttime = $(".StartTime").val();
+            var endtime = $(".EndTime").val();
+
+            var coursetimetable = {
+                TeacherName: teachername,
+                PresentDay: presentday,
+                StartTime: starttime,
+                EndTime: endtime
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{coursetimetable:" + JSON.stringify(coursetimetable) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })

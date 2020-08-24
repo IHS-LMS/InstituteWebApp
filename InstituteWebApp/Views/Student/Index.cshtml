@@ -26,21 +26,21 @@
 
                 <div>
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="" pattern="[A-Za-z- ]+" required>
-                    <label for="father_name"></label>
-                    <input type="text" name="father_name" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="name" id="" class="Name" pattern="[A-Za-z- ]+" required>
+                    <label for="father_name">Father_Name</label>
+                    <input type="text" name="father_name" id="" class="FatherName" pattern="[A-Za-z- ]+" required>
                     <label for="grand_father_name">GrandFather_Name</label>
-                    <input type="text" name="grand_father_name" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="grand_father_name" id="" class="GrandFather_Name" pattern="[A-Za-z- ]+" required>
                     <label for="gender">Gender</label>
-                    <select name="gender" id="" required>
+                    <select name="gender" id="" class="Gender" required>
                         <option value="">Select</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                     <label for="dob">DOB</label>
-                    <input type="date" name="dob" id="" required>
-                    <label for="pob">POB</label>
-                    <select name="pob" id="" required>
+                    <input type="date" name="dob" id="" class="DOB" required>
+                    <label for="pob" class="POB">POB</label>
+                    <select name="pob" id="" class="POB" required>
                         <option value="">Select</option>
                         <option value="kandahar">Kandahar</option>
                         <option value="kabul">Kabul</option>
@@ -53,14 +53,14 @@
                         <option value="other">Other</option>
                     </select>
                     <label for="native_language">Native_Language</label>
-                    <select name="native_language" id="" required>
+                    <select name="native_language" id="" class="NativeLanguage" required>
                         <option value="">Select</option>
                         <option value="pashto">Pashto</option>
                         <option value="dari">Dari</option>
                         <option value="uzbaki">Uzbaki</option>
                     </select>
                     <label for="nationality">Nationality</label>
-                    <select name="nationality" id="" required>
+                    <select name="nationality" id="" class="Nationality" required>
                         <option value="">Select</option>
                         <option value="pashtoon">Pashtoon</option>
                         <option value="tajik">Tajik</option>
@@ -69,19 +69,19 @@
                         <option value="other">Other</option>
                     </select>
                     <label for="NID">Tazkira_Number</label>
-                    <input type="number" name="NID" id="" required>
+                    <input type="number" name="NID" id="" class="TazkiraNumber" required>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="" required>
+                    <input type="email" name="email" id="" class="Email" required>
                     <label for="cell_Phone"> Cell_Phone</label>
-                    <input type="number" name="cell_phone" id="" required>
+                    <input type="number" name="cell_phone" id="" class="CellPhone" required>
                     <label for="parent_cell_phone">Parent_Cell_Phone</label>
-                    <input type="number" name="parent_cell_phone" id="" required>
+                    <input type="number" name="parent_cell_phone" id="" class="ParentCellPhone" required>
                     <hr>
 
                     <label for="school_name">School_Name</label>
-                    <input type="text" name="school_name" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="school_name" id="" class="SchoolName" pattern="[A-Za-z- ]+" required>
                     <label for="school_location">School_Location</label>
-                    <select name="school_location" id="" required>
+                    <select name="school_location" id="" class="SchoolLocation" required>
                         <option value="">Select</option>
                         <option value="kandahar">Kandahar</option>
                         <option value="kabul">Kabul</option>
@@ -94,12 +94,12 @@
                         <option value="other">Other</option>
                     </select>
                     <label for="graduation_date">Graduation_Date</label>
-                    <input type="date" name="graduation_date" id="" required>
+                    <input type="date" name="graduation_date" id="" class="GraduationDate" required>
                     <label for="transcript">Transcript</label>
-                    <input type="file" id="" name="transcript" required>
+                    <input type="file" id="" class="Transcript" name="transcript" required>
                     <hr>
-                    <label for="faculty_name">Faculty Name</label>
-                    <select name="faculty_name" id="">
+                    <label for="faculty_name">Faculty_Name</label>
+                    <select name="faculty_name" id="" class="FacultyName">
                         <option value="">Select</option>
                         <option value="Midwifery">Midwifery</option>
                         <option value="Nursing">Nursing</option>
@@ -108,7 +108,7 @@
                     </select>
                     <hr>
                     <label for="province"> Province</label>
-                    <select name="province" id="" required>
+                    <select name="province" id="" class="Province" required>
                         <option value="">Select</option>
                         <option value="kandahar">Kandahar</option>
                         <option value="kabul">Kabul</option>
@@ -121,11 +121,11 @@
                         <option value="other">Other</option>
                     </select>
                     <label for="district"> District </label>
-                    <input type="number" name="district" id="" pattern="[0-9]+" required>
+                    <input type="number" name="district" id="" class="District" pattern="[0-9]+" required>
                     <label for="street_number">Street_Number</label>
-                    <input type="number" name="street_number" id="" pattern="[0-9]+" required>
+                    <input type="number" name="street_number" id="" class="StreetNumber" pattern="[0-9]+" required>
                     <label for="house_number">House_Number</label>
-                    <input type="number" name="house_number" id="" pattern="[0-9]+" required>
+                    <input type="number" name="house_number" id="" class="HouseNumber" pattern="[0-9]+" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -137,8 +137,7 @@
                     <div>
                         <img src="" id="photo" alt="" class="photo" style=" margin-left: 0px; ">
                     </div>
-                    <input type="file" onchange="loadFile(event)" name="photo" id="select-photo-button"
-                           value="Select Photo" style="outline: none;" required>
+                    <input type="file" onchange="loadFile(event)" name="photo" id="select-photo-button" class="Photo" value="Select Photo" style="outline: none;" required>
                 </div>
             </main>
         </form>
@@ -151,3 +150,53 @@
 </body>
 
 </html>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var index = {
+                Name: $(".Name").val(),
+                Fathername: $(".FatherName").val(),
+                Gender: $(".Gender").val(),
+                Dob : $(".DOB").val(),
+                Pob : $(".POB").val(),
+                Nativelanguage: $(".NativeLanguage").val(),
+                Nationality: $(".Nationality").val(),
+                Tazkiranumber: $(".TazkiraNumber").val(),
+                Email: $(".Email").val(),
+                Cellphone: $(".CellPhone").val(),
+                Parentcellphone: $(".ParentCellPhone").val(),
+                Schoolname: $(".SchoolName").val(),
+                Schoollocation: $(".SchoolLocation").val(),
+                Graduationdate: $(".GraduationDate").val(),
+                Transcript: $(".Transcript").val(),
+                Facultyname: $(".FacultyName").val(),
+                Province: $(".Province").val(),
+                District: $(".District").val(),
+                Streetnumber: $(".StreetNumber").val(),
+                Housenumber: $(".HouseNumber").val(),
+                Photo: $(".Photo").val()
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{index:" + JSON.stringify(index) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

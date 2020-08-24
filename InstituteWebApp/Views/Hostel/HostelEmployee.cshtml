@@ -23,9 +23,9 @@
             <main id="main">
                 <div>
                     <label for=" HostelID"> Hostel_ID</label>
-                    <input type="number" name=" HostelID" id="" pattern="[0-9]+" required>
+                    <input type="number" name=" HostelID" id="" class="HostelID" pattern="[0-9]+" required>
                     <label for="EmployeeID ">Employee_ID </label>
-                    <input type="number" name="EmployeeID" id="" pattern="[0-9]+" required>
+                    <input type="number" name="EmployeeID" id="" class="EmployeeID" pattern="[0-9]+" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -41,3 +41,37 @@
 </body>
 
 </html>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var hostelID = $(".HostelID").val();
+            var employeeID = $(".EmployeeID").val();
+
+            var hostelemployee = {
+                HostelID: hostelID,
+                EmployeeID: employeeID
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{course:" + JSON.stringify(hostelemployee) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

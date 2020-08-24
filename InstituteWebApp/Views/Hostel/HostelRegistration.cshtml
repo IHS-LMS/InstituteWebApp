@@ -21,15 +21,15 @@
 
                 <div>
                     <label for="ID">ID</label>
-                    <input type="number" name="ID" id="" pattern="[0-9]+" required>
+                    <input type="number" name="ID" id="" class="ID" pattern="[0-9]+" required>
                     <label for="Hostel_ID">Hostel_ID</label>
-                    <input type="number" name="Hostel_ID" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Hostel_ID" id="" class="HostelID" pattern="[0-9]+" required>
                     <label for="Student_ID">Student_ID</label>
-                    <input type="number" name="Student_ID" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Student_ID" id="" class="StudentID" pattern="[0-9]+" required>
                     <label for="Date">Date</label>
-                    <input type="date" name="Date" id="" required>
+                    <input type="date" name="Date" id="" class="Date" required>
                     <label for="Room_ID">Room_ID</label>
-                    <input type="number" name="Room_ID" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Room_ID" id="" class="RoomID" pattern="[0-9]+" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -46,3 +46,43 @@
 </body>
 
 </html>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var id = $(".ID").val();
+            var hostelID = $(".HostelID").val();
+            var studentID = $(".StudentID").val();
+            var date = $(".Date").val();
+            var roomID = $(".RoomID").val();
+
+            var hostelregistration = {
+                ID: id,
+                HostelID: hostelID,
+                StudentID: studentID,
+                Date: date,
+                RoomID: roomID
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{course:" + JSON.stringify(hostelregistration) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

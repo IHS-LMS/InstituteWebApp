@@ -22,27 +22,27 @@
 
                 <div>
                     <label for=" HostelID"> Hostel_ID</label>
-                    <input type="number" name=" HostelID" id="" pattern="[0-9]+" required>
+                    <input type="number" name=" HostelID" id="" class="HostelID" pattern="[0-9]+" required>
                     <label for="RoomNumber">Room_Number</label>
-                    <input type="number" name="RoomNumber" id="" pattern="[0-9]+" required>
+                    <input type="number" name="RoomNumber" id="" class="RoomNumber" pattern="[0-9]+" required>
                     <label for="FloorNo">Floor_Number</label>
-                    <input type="number" name="FloorNo" id="" pattern="[0-9]+" required>
+                    <input type="number" name="FloorNo" id="" class="FloorNumber" pattern="[0-9]+" required>
                     <label for=" Bed"> Bed</label>
-                    <input type="number" name=" Bed" id="" pattern="[0-9]+" required>
+                    <input type="number" name=" Bed" id="" class="Bed" pattern="[0-9]+" required>
                     <label for="Cupboard ">Cupboard </label>
-                    <input type="number" name="Cupboard" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Cupboard" id="" class="Cupboard" pattern="[0-9]+" required>
                     <label for="Curtains">Curtains</label>
-                    <input type="number" name="Curtains" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Curtains" id="" class="Curtains" pattern="[0-9]+" required>
                     <label for="Fan">Fan</label>
-                    <input type="number" name="Fan" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Fan" id="" class="Fan" pattern="[0-9]+" required>
                     <label for=" Heater"> Heater</label>
-                    <input type="number" name="Heater" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Heater" id="" class="Heater" pattern="[0-9]+" required>
                     <label for="Blanket">Blanket</label>
-                    <input type="number" name="Blanket" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Blanket" id="" class="Blanket" pattern="[0-9]+" required>
                     <label for="Pillow ">Pillow </label>
-                    <input type="number" name="Pillow" id="" pattern="[0-9]+" required>
+                    <input type="number" name="Pillow" id="" class="Pillow" pattern="[0-9]+" required>
                     <label for=" Carpet"> Carpet</label>
-                    <input type="number" name=" Carpet" id="" pattern="[0-9]+" required>
+                    <input type="number" name=" Carpet" id="" class="Carpet" pattern="[0-9]+" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -58,3 +58,54 @@
 </body>
 
 </html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var hostelID = $(".HostelID").val();
+            var roomNumber = $(".RoomNumber").val();
+            var floorNumber = $(".FloorNumber").val();
+            var bed = $(".Bed").val();
+            var cupboard = $(".Cupboard").val();
+            var curtains = $(".Curtains").val();
+            var fan = $(".Fan").val();
+            var heater = $(".Heater").val();
+            var blanket = $(".Blanket").val();
+            var pillow = $(".Pillow").val();
+            var carpet = $(".Carpet").val();
+
+            var hostelroom = {
+                HostelID: hostelID,
+                RoomNumber: roomNumber,
+                FloorNumber: floorNumber,
+                Bed: bed,
+                Cupboard: cupboard,
+                Curtains: curtains,
+                Fan: fan,
+                Heater: heater,
+                Blanket: blanket,
+                Pillow: pillow,
+                Carpet: carpet
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{hostelroom:" + JSON.stringify(hostelroom) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

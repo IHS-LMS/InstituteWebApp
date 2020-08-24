@@ -22,25 +22,25 @@
                     <h2>Select Teacher</h2>
                     <br>
                     <label for="teacher">Teacher_ID</label>
-                    <input type="number" name="teacher-id" id="">
+                    <input type="number" name="teacher-id" id="" class="TeacherID">
                     <hr>
                     <br>
                     <h2>Select Students</h2>
                     <br>
                     <label for="student_1_ID">Student_1_ID</label>
-                    <input type="number" name="student_1_ID" id="">
+                    <input type="number" name="student_1_ID" id="" class="Student_1_ID">
                     <label for="student_2_ID">Student_2_ID</label>
-                    <input type="number" name="student_2_ID" id="">
+                    <input type="number" name="student_2_ID" id="" class="Student_2_ID">
                     <label for="student_3_ID">Student_3_ID</label>
-                    <input type="number" name="student_3_ID" id="">
+                    <input type="number" name="student_3_ID" id="" class="Student_3_ID">
                     <label for="student_4_ID">Student_4_ID</label>
-                    <input type="number" name="student_4_ID" id="">
+                    <input type="number" name="student_4_ID" id="" class="Student_4_ID">
                     <label for="student_5_ID">Student_5_ID</label>
-                    <input type="number" name="student_5_ID" id="">
+                    <input type="number" name="student_5_ID" id="" class="Student_5_ID">
                     <label for="student_6_ID">Student_6_ID</label>
-                    <input type="number" name="student_6_ID" id="">
+                    <input type="number" name="student_6_ID" id="" class="Student_6_ID">
                     <label for="student_7_ID">Student_7_ID</label>
-                    <input type="number" name="student_7_ID" id="">
+                    <input type="number" name="student_7_ID" id="" class="Student_7_ID">
                     <hr>
                     <br>
                     <h2>Select Course and Date</h2>
@@ -54,9 +54,9 @@
                         <option value="Laboratory">Laboratory</option>
                     </select>
                     <label for="course">Course_ID</label>
-                    <input type="number" name="course" id="">
+                    <input type="number" name="course" id="" class="CourseID">
                     <label for="date">Date</label>
-                    <input type="date" ID="date" id="" required>
+                    <input type="date" ID="date" id="" class="Date" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -74,3 +74,52 @@
     <script src="/static/js/script.js"></script>
 </body>
 </html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var teacherID = $(".TeacherID").val();
+            var student_1_ID = $(".Student_1_ID").val();
+            var student_2_ID = $(".Student_2_ID").val();
+            var student_3_ID = $(".Student_3_ID").val();
+            var student_4_ID = $(".Student_4_ID").val();
+            var student_5_ID = $(".Student_5_ID").val();
+            var student_6_ID = $(".Student_6_ID").val();
+            var student_7_ID = $(".Student_7_ID").val();
+            var courseID = $(".CourseID").val();
+            var date = $(".Date").val();
+
+            var studentnightshift = {
+                TeacherID: teacherID,
+                Student_1_ID: student_1_ID,
+                Student_2_ID: student_2_ID,
+                Student_3_ID: student_3_ID,
+                Student_4_ID: student_4_ID,
+                Student_5_ID: student_5_ID,
+                Student_6_ID: student_6_ID,
+                Student_7_ID: student_7_ID,
+                CourseID: courseID,
+                Date: date
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{studentnightshift:" + JSON.stringify(studentnightshift) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

@@ -20,13 +20,13 @@
             <main id="main">
                 <div>
                     <label for="Course_Name">Course_Name</label>
-                    <input type="text" name="Course_Name" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="Course_Name" id="" class="CourseName" pattern="[A-Za-z- ]+" required>
                     <label for="Teacher_Name">Teacher_Name</label>
-                    <input type="text" name="Teacher_Name" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="Teacher_Name" id="" class="TeacherName" pattern="[A-Za-z- ]+" required>
                     <label for="Exam Date">Exam_Date</label>
-                    <input type="date" name="Exam Date" id="" required>
+                    <input type="date" name="Exam Date" id="" class="ExamDate" required>
                     <label for="Time">Time</label>
-                    <input type="time" name="Time" id="" required>
+                    <input type="time" name="Time" id="" class="Time" required>
 
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
@@ -42,3 +42,41 @@
 </body>
 
 </html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var coursename = $(".CourseName").val();
+            var teachername = $(".TeacherName").val();
+            var examdate = $(".ExamDate").val();
+            var time = $(".Time").val();
+
+            var examtimetable = {
+                CourseName: coursename,
+                TeacherName: teachername,
+                ExamDate: examdate,
+                Time: time
+
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{examtimetable:" + JSON.stringify(examtimetable) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

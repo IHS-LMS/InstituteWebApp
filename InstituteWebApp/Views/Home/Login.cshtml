@@ -11,11 +11,11 @@
     <div class="login-div">
         <form action="#" method="post">
             <label for="" class="login-label">Username</label>
-            <input type="text" class="login-input" required>
+            <input type="text" class="login-input Username" required>
             <br>
             <br>
             <label for="" class="login-label">Password</label>
-            <input type="text" class="login-input" required>
+            <input type="text" class="login-input Password" required>
             <div class="button-adjust">
                 <input type="submit" value="Login" class="login-button">
                 <!-- insert path for CREAT ACCOUNT page -->
@@ -26,3 +26,37 @@
 </body>
 
 </html>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var username = $(".Username").val();
+            var password = $(".Password").val();
+
+            var login = {
+                Username: username,
+                Password: password
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{course:" + JSON.stringify(login) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

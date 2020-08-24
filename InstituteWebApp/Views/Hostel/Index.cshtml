@@ -23,7 +23,7 @@
 
                 <div>
                     <label for=" HostelID"> Hostel_Number</label>
-                    <input type="number" name=" HostelID" id="" pattern="[0-9]+" required>
+                    <input type="number" name=" HostelID" id="" class="HostelNumber" pattern="[0-9]+" required>
                     <label for="HostelType ">Hostel_Type </label>
                     <select name="hostelType" id="hi">
                         <option value="select">Select</option>
@@ -46,3 +46,32 @@
 </body>
 
 </html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var hostelNumber = $(".HostelNumber").val();
+
+            var index = {
+                HostelNumber: hostelNumber
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{index:" + JSON.stringify(index) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+</script>

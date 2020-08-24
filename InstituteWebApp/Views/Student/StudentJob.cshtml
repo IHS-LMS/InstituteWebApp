@@ -20,19 +20,19 @@
             <main id="main">
                 <div>
                     <label for="student_ID">Student_ID</label>
-                    <input type="number" name="student_ID" id="" required>
+                    <input type="number" name="student_ID" id="" class="StudentID" required>
                     <label for="hire_date">Hire_Date</label>
-                    <input type="date" name="hire_date" id="" required>
+                    <input type="date" name="hire_date" id="" class="HireDate" required>
                     <label for="office_name">Office_Name</label>
-                    <input type="text" name="office_name" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="office_name" id="" class="OfficeName" pattern="[A-Za-z- ]+" required>
                     <label for="office_email">Office_Email</label>
-                    <input type="email" name="office_email" id="" required>
+                    <input type="email" name="office_email" id="" class="OfficeEmail" required>
                     <label for="office_phone">Office_Phone_Number</label>
-                    <input type="number" name="office_phone" id="" required>
+                    <input type="number" name="office_phone" id="" class="OfficePhoneNumber" required>
                     <label for="position">Position</label>
-                    <input type="text" name="position" id="" pattern="[A-Za-z- ]+" required>
+                    <input type="text" name="position" id="" class="Position" pattern="[A-Za-z- ]+" required>
                     <label for="office_location">Office_Location</label>
-                    <select name="office_location" id="" required>
+                    <select name="office_location" id="" class="OfficeLocation" required>
                         <option value="">Select</option>
                         <option value="kandahar">Kandahar</option>
                         <option value="kabul">Kabul</option>
@@ -59,3 +59,40 @@
     </div>
 </body>
 </html>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var studentjob = {
+                StudentID: $(".StudentID").val(),
+                HireDate: $(".HireDate").val(),
+                OfficeName: $(".OfficeName").val(),
+                OfficeEmail: $(".OfficeEmail").val(),
+                OfficePhoneNumber: $(".OfficePhoneNumber").val(),
+                Position: $(".Position").val(),
+                OfficeLocation: $(".OfficeLocation").val()
+
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{studentjob:" + JSON.stringify(studentjob) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>

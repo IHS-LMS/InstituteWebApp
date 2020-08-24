@@ -21,7 +21,7 @@
             <main id="main">
                 <div>
                     <label for="Faculty_Name">Faculty_Name</label>
-                    <input type="text" name="Faculty_Name" id="" pattern="[A-Za-z- ]+">
+                    <input type="text" name="Faculty_Name" id="" class="FacultyName" pattern="[A-Za-z- ]+">
                     <div style="margin: 0; margin-top: 30px;  display: flex; justify-content: space-around;">
                         <button type="submit" class="button-style">Save</button>
                         <button type="reset" class="button-style" id="btn-clear">Cancel</button>
@@ -36,3 +36,34 @@
 </body>
 
 </html>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.button-style').click(function () {
+            var facultyname = $(".FacultyName").val();
+
+            var index = {
+                FacultyName: facultyname
+            }
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: "{index:" + JSON.stringify(index) + "}",
+                url: "/Faculty/GetCourseData",
+                success: function (data) {
+                    alert("Data: " + data);
+                },
+                error: function (result) {
+                    alert("Problem occured" + result);
+                }
+            });
+        })
+    });
+
+
+
+</script>
